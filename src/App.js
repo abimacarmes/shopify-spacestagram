@@ -26,14 +26,10 @@ export default class App extends Component {
       .catch(error => alert(error.message));
   }
 
-  handleScroll = () => {
-    console.log('scroll')
-    this.fetchApiResults();
-    var isAtBottom = document.documentElement.scrollHeight - document.documentElement.scrollTop <= document.documentElement.clientHeight;
-    if(isAtBottom){
-      
-    }
-  }
+  /*let scrollObserver = new IntersectionObserver(this.fetchApiResults(), {threshold: 0.9});
+  let target = document.querySelector('.images-container');
+
+  scrollObserver.observe(target);*/
   
   render(){
     
@@ -46,7 +42,7 @@ export default class App extends Component {
           <h4>Built by Abigail MacKenzie-Armes</h4>
         </header>
         <div className='images-container'>
-          {this.state.apiResults.map(image => <Image image={image}/>)}
+          {this.state.apiResults.map(image => <Image id={this.state.apiResults.indexOf(image)} image={image}/>)}
         </div>
       </div>
     )
