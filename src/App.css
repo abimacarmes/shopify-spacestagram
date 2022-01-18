@@ -1,62 +1,104 @@
-.App {
-  text-align: center;
+html{
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header, footer{
+  padding: 10px;
+  background-color: #4F6CF0;
+  color: #EDF4F7;
 }
 
-.image{
-  max-width: 100%;
-
-  margin-bottom: 15px;
-  margin-top: 15px;
-
-  border-width: 0.5px;
-
-  background-color:white;
+header{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-img{
-  width:100%;
-  height: auto;
+
+footer{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+header h1{
+  font-size: 2.8rem;
+  text-transform: lowercase;
+  text-decoration:underline;
+  text-decoration-color: #FE7960;
+}
+h2{
+  text-align: right;
 }
 
 body{
-  width: 95%;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  background-color: rgb(211, 222, 231);
-
-  min-width: 300px;
+  background-color: #EDF4F7;
 }
 
 .liked{
-  background-color: darkblue;
-  color: white;
+  background-color: #4F6CF0;
+  color: #EDF4F7;
+}
+
+button, .load-button{
+  background-color: #A8C1CE;
+  color:#FFFFFF;
+  width: 70px;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.15rem;
+}
+
+.load-button{
+  width: 200px;
+  padding: 10px;
+  background-color: #FE7960;
+  color: #FFFFFF;
+  margin: 20px;
+}
+
+.images-container{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin:auto;
+}
+
+.image{
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+  display:block;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px grey;
+  margin: 10px 0px;
+  min-width: 450px;
+  background-color:#FFFFFF;
+}
+
+.image-text{
+  padding: 10px 20px 20px 10px;
+  text-align: justify;
+}
+
+.image-text h3{
+  text-align: center;
+  text-transform: uppercase;
 }
 
 @media all and (min-width:600px){
-  img{
-      max-width:100%;
-      height: auto;
-  }
-
-  body{
-      width: 600px;
+  .card{
+    max-width: 800px;
   }
 }
 
 *{
-  font-family: Madefor, Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: rgb(23, 25, 32);
+  font-family: 'PT Sans', Madefor, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
