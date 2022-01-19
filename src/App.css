@@ -41,7 +41,7 @@ h2{
 
 /*Filter*/
 .date-filter{
-  padding: 10px;
+  padding-top: 10px;
   width: 95%;
   background-color: #FE7960;
   border-bottom-left-radius: 15px;
@@ -49,7 +49,15 @@ h2{
 }
 
 .date-filter h3,.date-filter input, .date-filter button{
-  margin-left: 10px;
+  margin-left: 15px;
+}
+
+.date-filter form{
+  padding-bottom: 10px;
+}
+
+.date-filter h3{
+  text-align: center;
 }
 
 .reset{
@@ -113,7 +121,7 @@ label{
 
 /*Load More Images Button*/
 button, .share-button{
-  background-color: #628FA7;
+  background-color: #3B5868;
   color:#FFFFFF;
   width: 70px;
   padding: 3px;
