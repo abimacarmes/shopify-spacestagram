@@ -5,6 +5,8 @@ function Image(props) {
     let {image} = props;
     let {key} = props;
 
+    let url = (image.hdurl ? image.hdurl : image.url);
+
     //Utilizes the useState hook to allow for state storage in a functional component.
     const [liked, setLiked] = useState(false);
     const [share, setShare] = useState(false);
@@ -12,7 +14,7 @@ function Image(props) {
     //A card is made for each image with the image, title, explanation, date, like button and a button to get a shareable link.
     return (
       <div key={key} className='card'>
-        <img className='image' src={image.hdurl} alt={'Photo of the day from NASA for date: ' + image.date}/>
+        <img className='image' src={url} alt={'Photo of the day from NASA for date: ' + image.date}/>
         <div className='image-text'>
             <h3>{image.title}</h3>
             <p>{image.explanation}</p>
@@ -24,11 +26,11 @@ function Image(props) {
                 <button className={share?'button-pressed button-share':'button-share'} onClick={() => setShare(!share)}>
                     Share Image
                 </button>
-                <a className={share ? '' :'hidden'} href="www.google.com" 
+                <a className={share ? '' :'hidden'} href={url} 
                     onClick={(event) => {
                         event.preventDefault();
-                        window.open(image.hdurl);
-                }}>{image.hdurl}</a>
+                        window.open(url);
+                }}>{url}</a>
             </div>
         </div>
       </div>
