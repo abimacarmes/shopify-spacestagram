@@ -2,10 +2,16 @@ html{
   font-size: 16px;
 }
 
+body{
+  background-color: #EDF4F7;
+}
+
+/*Header*/
 header, footer{
   padding: 10px;
   background-color: #4F6CF0;
   color: #EDF4F7;
+  min-width: 450px;
 }
 
 header{
@@ -28,49 +34,28 @@ h2{
   text-align: right;
 }
 
-body{
-  background-color: #EDF4F7;
-}
-
-.liked{
-  background-color: #4F6CF0;
-  color: #EDF4F7;
-}
-
-button, .load-button{
-  background-color: #A8C1CE;
-  color:#FFFFFF;
-  width: 70px;
-  padding: 3px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.15rem;
-}
-
-.load-button{
-  width: 200px;
+/*Filter*/
+.date-filter{
   padding: 10px;
+  width: 95%;
   background-color: #FE7960;
-  color: #FFFFFF;
-  margin: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
+.date-filter h3,.date-filter input, .date-filter button{
+  margin-left: 10px;
+}
+
+/*Card Container*/
 .images-container{
   width: 90%;
   display: flex;
-  justify-content: center;
-  align-content: center;
   flex-direction: column;
   margin:auto;
 }
 
-.image{
-  object-fit: cover;
-  max-height: 600px;
-  width: 100%;
-  display:block;
-}
-
+/*Card*/
 .card{
   display: flex;
   flex-direction: column;
@@ -80,6 +65,14 @@ button, .load-button{
   margin: 10px 0px;
   min-width: 450px;
   background-color:#FFFFFF;
+  margin: 15px auto;
+}
+
+.image{
+  object-fit: cover;
+  max-height: 600px;
+  width: 100%;
+  display:block;
 }
 
 .image-text{
@@ -90,9 +83,49 @@ button, .load-button{
 .image-text h3{
   text-align: center;
   text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #FE7960;
 }
 
+/*Card Buttons*/
+.button-pressed{
+  background-color: #4F6CF0;
+  color: #EDF4F7;
+}
+
+.button-share{
+  width: 120px;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+/*Load More Images Button*/
+button{
+  background-color: #A8C1CE;
+  color:#FFFFFF;
+  width: 70px;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.15rem;
+  margin: 5px;
+}
+
+.load-button{
+  width: 200px;
+  padding: 10px;
+  background-color: #FE7960;
+  color: #FFFFFF;
+  margin: 20px;
+}
 @media all and (min-width:600px){
+  .date-filter{
+    margin-left:auto;
+    margin-right: 0px;
+    width: 350px;
+  }
   .card{
     max-width: 800px;
   }
