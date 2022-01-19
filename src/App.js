@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Image from './Image.js';
 import './App.css';
+const api_key = process.env.REACT_APP_API_KEY;
 
 export default class App extends Component {
   //State will store API data fetched.
@@ -15,7 +16,7 @@ export default class App extends Component {
 
   //Function to pull further results and add them to the array stored in state.
   fetchApiResults = () => {
-    fetch('https://api.nasa.gov/planetary/apod?api_key=STXM8eM5nh0gYoIGwu9LBHAJUXdJ6HsO6ipuiL62&count=5')
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}&count=5`)
       .then(response => response.json())
       .then(responseJson => {
           let prevResults = this.state.apiResults;
@@ -31,7 +32,7 @@ export default class App extends Component {
   //Function to pull the image for a particular date based on input from the user.
   fetchApiResultsDate = () => {
     let date = document.getElementById('date-input').value;    
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=STXM8eM5nh0gYoIGwu9LBHAJUXdJ6HsO6ipuiL62&date=${date}`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${api_key}&date=${date}`)
       .then(response => response.json())
       .then(responseJson => {
         let newResults = [];
