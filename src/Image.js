@@ -17,7 +17,7 @@ function Image(props) {
     return (
       <div key={key} className='card'>
         <img id={key} className={image.media_type === 'image' ? 'image' : 'hidden'} src={url} alt={'Photo of the day from NASA for date: ' + image.date}/>
-            <label for={key} className={image.media_type === 'image'? 'hidden':''}>The media for the day is an alternative media type. Use the 'Share' button to view. </label>  
+            <label htmlFor={key} className={image.media_type === 'image'? 'hidden':''}>The media for the day is an alternative media type. Use the 'Share' button to view. </label>  
         <div className='image-text'>
             <h3>{image.title}</h3>
             <p>{image.explanation}</p>
@@ -29,7 +29,7 @@ function Image(props) {
                 <button className={share?'button-pressed button-share':'button-share'} onClick={() => setShare(!share)}>
                     Share
                 </button>
-                <a className={share ? '' :'hidden'} href={url} 
+                <a className={share ? 'share' :'share hidden'} href={url} 
                     onClick={(event) => {
                         event.preventDefault();
                         window.open(url);

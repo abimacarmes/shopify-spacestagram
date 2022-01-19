@@ -41,6 +41,7 @@ h2{
 
 /*Filter*/
 .date-filter{
+  min-width: 380px;
   padding-top: 10px;
   width: 95%;
   background-color: #FE7960;
@@ -50,6 +51,7 @@ h2{
 
 .date-filter h3,.date-filter input, .date-filter button{
   margin-left: 15px;
+  font-size: 1.15rem;
 }
 
 .date-filter form{
@@ -119,6 +121,12 @@ label{
   visibility: hidden;
 }
 
+/*Card Share*/
+a.share{
+  color:#3B5868;
+  text-decoration-color: #FE7960;
+}
+
 /*Load More Images Button*/
 button, .share-button{
   background-color: #3B5868;
@@ -142,7 +150,7 @@ button, .share-button{
   .date-filter{
     margin-left:auto;
     margin-right: 0px;
-    width: 350px;
+    width: 380px;
   }
   .card{
     max-width: 800px;
