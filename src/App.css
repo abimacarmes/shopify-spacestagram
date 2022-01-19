@@ -79,6 +79,11 @@ h2{
   display:block;
 }
 
+label{
+  font-weight: bold;
+  margin: auto;
+}
+
 .image-text{
   padding: 10px 20px 20px 10px;
   text-align: justify;
@@ -97,16 +102,12 @@ h2{
   color: #EDF4F7;
 }
 
-.button-share{
-  width: 120px;
-}
-
 .hidden{
   visibility: hidden;
 }
 
 /*Load More Images Button*/
-button{
+button, .share-button{
   background-color: #A8C1CE;
   color:#FFFFFF;
   width: 70px;

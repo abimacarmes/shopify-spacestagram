@@ -5,16 +5,19 @@ function Image(props) {
     let {image} = props;
     let {key} = props;
 
-    let url = (image.hdurl ? image.hdurl : image.url);
-
     //Utilizes the useState hook to allow for state storage in a functional component.
     const [liked, setLiked] = useState(false);
     const [share, setShare] = useState(false);
 
+    //Checks whether there is an HD version of the photo and, if not, utilizes the regular url.
+    let url = (image.hdurl ? image.hdurl : image.url);
+
     //A card is made for each image with the image, title, explanation, date, like button and a button to get a shareable link.
+    //Additional check to ensure the media type is an image and if not, display a label for the image tag to inform the user.
     return (
       <div key={key} className='card'>
-        <img className='image' src={url} alt={'Photo of the day from NASA for date: ' + image.date}/>
+        <img id={key} className={image.media_type === 'image' ? 'image' : 'hidden'} src={url} alt={'Photo of the day from NASA for date: ' + image.date}/>
+            <label for={key} className={image.media_type === 'image'? 'hidden':''}>The media for the day is an alternative media type. Use the 'Share' button to view. </label>  
         <div className='image-text'>
             <h3>{image.title}</h3>
             <p>{image.explanation}</p>
@@ -24,7 +27,7 @@ function Image(props) {
                     {liked ? 'Unlike' : 'Like'}
                 </button>
                 <button className={share?'button-pressed button-share':'button-share'} onClick={() => setShare(!share)}>
-                    Share Image
+                    Share
                 </button>
                 <a className={share ? '' :'hidden'} href={url} 
                     onClick={(event) => {
