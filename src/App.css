@@ -47,6 +47,10 @@ h2{
   margin-left: 10px;
 }
 
+.reset{
+  background: dark-grey;
+}
+
 /*Card Container*/
 .images-container{
   width: 90%;

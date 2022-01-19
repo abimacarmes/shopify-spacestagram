@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 
 function Image(props) {
+    //Store the passed values as variables.
     let {image} = props;
     let {key} = props;
+
+    //Utilizes the useState hook to allow for state storage in a functional component.
     const [liked, setLiked] = useState(false);
     const [share, setShare] = useState(false);
-    //<a href={image.hdurl} className={share ? 'share-link visible' : 'share-link'} onClick={() => window.open(image.hdurl)}>{image.hdurl}</a>    
+
+    //A card is made for each image with the image, title, explanation, date, like button and a button to get a shareable link.
     return (
       <div key={key} className='card'>
-        <img className='image' src={image.hdurl}/>
+        <img className='image' src={image.hdurl} alt={'Photo of the day from NASA for date: ' + image.date}/>
         <div className='image-text'>
             <h3>{image.title}</h3>
             <p>{image.explanation}</p>
