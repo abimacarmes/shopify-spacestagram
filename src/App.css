@@ -30,6 +30,11 @@ header h1{
   text-decoration:underline;
   text-decoration-color: #FE7960;
 }
+
+a{
+  color: white;
+}
+
 h2{
   text-align: right;
 }
